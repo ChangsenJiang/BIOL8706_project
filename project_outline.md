@@ -50,13 +50,13 @@ for both the exon and intergenic regions, which have been cleaned and filtered b
 
 **Exon:**
 
-+ 14972 Nucleotide Alignements of 14972 different exon locis (each of these alignments contain at least 4 taxa) in FASTA format (`all_alns.tar.gz`).
-+ 14972 Gene trees built from alignment above in newick format with support as aLRT values(`exon_c12_atleast4taxa.gene.trees.tar.gz`)
++ 14972 Nucleotide Alignements of 14972 different exon locis (each of these alignments contain at least 4 taxa) in FASTA format (`all_alns.tar.gz`)  (see `data/example_exon_data` for some examples)
++ 14972 Gene trees built from alignment above in newick format with support as aLRT values (`exon_c12_atleast4taxa.gene.trees.tar.gz`) (see `data/example_exon_data/treefile` for some examples)
 
 
 **Intergenic region:**
 
-+ Nucleotide Alignments of 63430 different loci from intergenic region in FASTA format for which gene trees were built (`63430.alns.tar.gz`)
++ Nucleotide Alignments of 63430 different loci from intergenic region in FASTA format for which gene trees were built (`63430.alns.tar.gz`) (see `data/example_intergenic_data` for some examples)
 
 + 63430 gene trees built from alignment above (after collapsing branches with aLRT values below 0.95). These trees were used to construct the species tree in original paper (`63430.aLRT-0.95-collapsed.gene.trees.gz`)
 
@@ -64,7 +64,7 @@ for both the exon and intergenic regions, which have been cleaned and filtered b
 
 ### Subsetting loci:
 
-I would randomly use 20 loci as the first small attempt. For further analysis, maybe I would use the first x% (maybe 20% of the loci?). I think I can’t use all, since 400 loci takes 3.5h in 128 threads, and 14972 and 63430 loci would take too long to finish. 
+I would randomly use 10 loci as the first small attempt. For further analysis, maybe I would use the first x% (maybe 20% of the loci?). I think I can’t use all, since 400 loci takes 3.5h in 128 threads, and 14972 and 63430 loci would take too long to finish. 
 
 ### Subset of species (if required?):
 
