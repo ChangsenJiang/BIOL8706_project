@@ -3,10 +3,10 @@
 
 ## 1. Overall aims of project 
 
-A recent study published in Nature reconstructed the phylogenetic history of avians using various locus types (different region). This study highlighted a strong effect of locus type on constructing gene trees and species trees, suggesting that intergenic regions yield more reliable results compared to exon regions, which produce substantially different tree outcomes. 
+A recent study [(Stiller *et al.* (2024))](https://www.nature.com/articles/s41586-024-07323-1) published in Nature reconstructed the phylogenetic history of avians using various locus types (different region). This study highlighted a strong effect of locus type on constructing gene trees and species trees, suggesting that intergenic regions yield more reliable results compared to exon regions, which produce substantially different tree outcomes. 
 
 However, the original study used Modeltest-NG v0.1.3 and RAXML-NG v0.9.0 for evolution model estimation, potentially leading to a oversimplified evolutionary model for gene tree estimation. Furthermore, the original study used nucleotide sequence alignment for phylogenetic analysis in exon region, while the amino acid alignemnt would be more stable for phylogenetic analysis. These might unfairly attribute the poor performance of exon regions solely to locus type.  
-As a consequence, in this study, we aim to use MixtureFinder to re-estimate the gene trees and species trees for both intergenic and exon regions to explore whether enhanced complex evolutionary models provide more accurate phylogenetic results.
+As a consequence, in this study, we aim to use MixtureFinder [(Ren *et al.*, 2024)](https://www.biorxiv.org/content/10.1101/2024.03.20.586035v1.full#ref-14) to re-estimate the gene trees and species trees for both intergenic and exon regions to explore whether enhanced complex evolutionary models provide more accurate phylogenetic results.
 
 In specific:
 
@@ -17,7 +17,7 @@ In specific:
 
 ## 2. Dataset used
 
-We will use the dataset from the avian evolution paper by [Stiller *et al.* (2024)](https://www.nature.com/articles/s41586-024-07323-1) 
+We will use the [dataset](https://erda.ku.dk/archives/341f72708302f1d0c461ad616e783b86/published-archive.html) from the avian evolution paper by [Stiller *et al.* (2024)](https://www.nature.com/articles/s41586-024-07323-1) 
 
 Reason: This dataset is the original data of the avain evolution paper, and the procedure of this project is to re-estimate the GTs and species trees using mixture models. So of course I should use the same dataset as the original paper.
   
@@ -191,7 +191,7 @@ iqtree2 -t astral_mixspecies.treefile --gcf mixsubloci.treefile -s ALN_FILE --sc
 
 2: Compare the concordance factor between gene trees from the original paper and those new trees using MixtureFinder. 
 
-Concordance factor is calculated as the proportion of gene trees/ or quartets/or deceive sites that have same topologies as the species tree. It is a measurement of the similarity between the gene tree and species tree. 
+[Concordance factor](https://ecoevorxiv.org/repository/view/6484/) is calculated as the proportion of gene trees/ or quartets/or deceive sites that have same topologies as the species tree. It is a measurement of the similarity between the gene tree and species tree. 
 
 **If the concordance factor of new gene trees has greater value than that of the original paper. It indicates that the new model would improve the quality of gene tree estimation.**
 
