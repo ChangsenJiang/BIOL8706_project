@@ -102,6 +102,7 @@ iqtree2 -S bird_subloci -m papermodel --prefix subloci -T 128
 
 > [!NOTE]
 > Question1: For this part, should we use the same model (by Modeltest-NG) in original paper?
+
 > Question2: We might use `-st NT2AA` option to perform the estimation based on translated AA sequences. However, it don’t works so far since the exon nucleotide alignment contain gaps, which makes the number of sites is not multiple of 3.
 
 
