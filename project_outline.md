@@ -50,15 +50,15 @@ for both the exon and intergenic regions, which have been cleaned and filtered b
 
 **Exon:**
 
-+ 14972 Nucleotide Alignements of 14972 different exon locis (each of these alignments contain at least 4 taxa) in FASTA format.
-+ 14972 Gene trees built from alignment above in newick format with support as aLRT values
++ 14972 Nucleotide Alignements of 14972 different exon locis (each of these alignments contain at least 4 taxa) in FASTA format (`all_alns.tar.gz`).
++ 14972 Gene trees built from alignment above in newick format with support as aLRT values(`exon_c12_atleast4taxa.gene.trees.tar.gz`)
 
 
 **Intergenic region:**
 
-+ Nucleotide Alignments of 63430 different loci from intergenic region in FASTA format for which gene trees were built
++ Nucleotide Alignments of 63430 different loci from intergenic region in FASTA format for which gene trees were built (`63430.alns.tar.gz`)
 
-+ 63430 gene trees built from alignment above (after collapsing branches with aLRT values below 0.95). These trees were used to construct the species tree in original paper
++ 63430 gene trees built from alignment above (after collapsing branches with aLRT values below 0.95). These trees were used to construct the species tree in original paper (`63430.aLRT-0.95-collapsed.gene.trees.gz`)
 
 ## 4. A small subset of the data that you can test your code on 
 
@@ -92,7 +92,7 @@ I would write a small python script (haven't done yet) to show the Order subsett
 If not subsampling species, we could just subset the gene trees from the orginal data based on our selected loci.
 
 
-If we subsample species, we should filter the selected loci alignment files with subeset species (probably need another python script), then use these alinments to estimating gene trees using the original model in paper through a command like this:
+If we subsample species, we should filter the selected loci alignment files with subeset species (this would need another python script), then use these alinments to estimating gene trees using the original model in paper through a command like this:
 
 ```
 iqtree2 -S bird_subloci -m papermodel --prefix subloci -T 128
@@ -100,8 +100,8 @@ iqtree2 -S bird_subloci -m papermodel --prefix subloci -T 128
 
 * `bird_subloci` is the name of directory containing alignment files of subsampled loci
 
+> [!NOTE]
 > Question1: For this part, should we use the same model (by Modeltest-NG) in original paper?
-
 > Question2: We might use `-st NT2AA` option to perform the estimation based on translated AA sequences. However, it don’t works so far since the exon nucleotide alignment contain gaps, which makes the number of sites is not multiple of 3.
 
 
@@ -115,6 +115,7 @@ astral -i subloci.treefile -o astral_species.tree 2> astral_species.log
 
 The the number of loci subsetted would differ between intergeneic regions, but the process to estimate gene tree and species tree should be similar. 
 
+> [!NOTE]
 > Question3: The original paper used ASTRAL to construce species tree which takes a treefile containing a set of gene trees to estimate. While the IQTree used the alignment file (and also the partition file) to estimate species tree. In this study maybe I should use ASTRAL all the time?
 
 ### 2. Re-estimating new trees using mixturefinder:
@@ -198,4 +199,6 @@ iqtree2 -t astral_mixspecies.treefile --gcf mixsubloci.treefile -s ALN_FILE --sc
 3: Compare the Robinson-Foulds distance between the species trees of the exon and intergenic region. 
 
 If the RF distance between the 2 species trees of different region (using MixtureFinder) is less than that RF distance between the 2 species trees of intergenic and exon region in original paper, it would indicates that our mixture model helps to construct better phylogenic result for the exon region. Furthermore, Robinson-Fould distance could also used to check whether the intergenic species tree changed. 
->Question 4: If I subsampled the loci (or species), that means the RF distance in original paper and the Rf distance in this project would based on different data amount, is this acceptable?
+
+> [!NOTE]
+> Question 4: If I subsampled the loci (or species), that means the RF distance in original paper and the Rf distance in this project would based on different data amount, is this acceptable?
