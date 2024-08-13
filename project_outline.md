@@ -103,7 +103,7 @@ iqtree2 -S bird_subloci -m papermodel --prefix subloci -T 128
 > [!NOTE]
 > Question1: For this part, should we use the same model (by Modeltest-NG) in original paper?
 
-> Question2: We might use `-st NT2AA` option to perform the estimation based on translated AA sequences. However, it don’t works so far since the exon nucleotide alignment contain gaps, which makes the number of sites is not multiple of 3.
+> Question2: We might use `-st NT2AA` option to perform the estimation based on translated AA sequences. However, it don’t works so far since the exon nucleotide alignment contain gaps, and the original data also excluded the third condon position, which makes the number of sites is not multiple of 3 and unable translate.
 
 
 **1.2 Estimate species trees**
@@ -141,9 +141,12 @@ iqtree -s bird_conloci -m MIX+MF -T AUTO
 Then use the new mixture model to calculate the gene trees
 (here assume mixture model is `MIX{TIM2+FO,TPM3+FO,HKY+FO,TPM3+FO}+I+G`)
 
+
 ```
 iqtree2 -S bird_subloci -m “MIX{TIM2+FO,TPM3+FO,HKY+FO,TPM3+FO}+I+G” --prefix mixsubloci -T 128
 ```
+> [!NOTE]
+> Question 4:  It seems like the `-m` option would use the same mixture model for all alignments in the `-S bird_subloci` directory, maybe I should write a scipt to use MixtureFinder for each loci to estimate different models for each loci alignment?
 
 **2.2 Species trees:**
 
@@ -202,4 +205,4 @@ iqtree2 -t astral_mixspecies.treefile --gcf mixsubloci.treefile -s ALN_FILE --sc
 If the RF distance between the 2 species trees of different region (using MixtureFinder) is less than that RF distance between the 2 species trees of intergenic and exon region in original paper, it would indicates that our mixture model helps to construct better phylogenic result for the exon region. Furthermore, Robinson-Fould distance could also used to check whether the intergenic species tree changed. 
 
 > [!NOTE]
-> Question 4: If I subsampled the loci (or species), that means the RF distance in original paper and the Rf distance in this project would based on different data amount, is this acceptable?
+> Question 5: If I subsampled the loci (or species), that means the RF distance in original paper and the Rf distance in this project would based on different data amount, is this acceptable?
