@@ -12,7 +12,10 @@ Based on
 
 After that, **4255 exon loci** containing all of these 24 species were filtered using the `filterespecies_new.py` script in the script folder. Each of the 4255 filtered alignment files now contains only the 24 species instead of 363, and these files are placed in the `4255species_exondata_filtered` folder.
 
-The analysis below was based on these 4255 exon loci. For the **full dataset**, I would change the filter logic to "include any loci that contain two or more of these 24 species," which would result in many more loci.
+The analysis below was based on these 4255 exon loci. For the **full dataset**, I would change the filter logic to 
+- **include any loci that contain 4 or more of these 24 selected species** 
+
+, which would result in **14194 (in 14972)** exon loci.
 
 
 ## 2. Analysis Process (Exon)
