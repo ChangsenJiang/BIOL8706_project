@@ -2,3 +2,5 @@ iqtree-2.3.5.1.mixfinder-Linux-intel/
 data/filter_templete/
 data/species_filter/
 data/mass/
+data/example_exon_data
+data/example_intergenic_data
