@@ -1,4 +1,4 @@
-# Bird-tree Progress updata
+# Bird-tree Progress update
 
 Similar to the initial update, but a new readme file, covering the full datasets your are using, the commands you are using to do your analyses, and outlining how you plan to assess the results (e.g. plots, etc.) If you can provide example results from your initial small analyses, that will be very very useful!
 
