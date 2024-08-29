@@ -1,0 +1,20 @@
+IQ-TREE multicore version 2.3.5.1.mixfinder for Windows 64-bit built Aug 21 2024
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor, Heiko Schmidt,
+Dominik Schrempf, Michael Woodhams, Ly Trong Nhan, Thomas Wong
+
+Host:    Asuka (AVX2, FMA3, 15 GB RAM)
+Command: C:\Windows\system32\iqtree2.exe -rf astral_4255species_mix.tree 4255combined.treefile
+Seed:    330523 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Thu Aug 29 23:32:49 2024
+Kernel:  AVX+FMA - 1 threads (16 CPU cores detected)
+
+HINT: Use -nt option to specify number of threads because your CPU has 16 cores!
+HINT: -nt AUTO will automatically determine the best number of threads to use.
+
+Reading tree(s) file 4255combined.treefile ...
+4255 tree(s) loaded (0 rooted and 4255 unrooted)
+Reading tree(s) file astral_4255species_mix.tree ...
+1 tree(s) loaded (1 rooted and 0 unrooted)
+Computing Robinson-Foulds distances between two sets of trees
+Robinson-Foulds distances printed to 4255combined.treefile.rfdist
+Date and Time: Thu Aug 29 23:32:50 2024
