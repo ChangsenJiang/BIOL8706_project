@@ -4,3 +4,6 @@ data/species_filter/
 data/mass/
 data/example_exon_data
 data/example_intergenic_data
+data/100exon_fullspecies
+data/4255exon_result
+data/4255exon_mix_result_new
