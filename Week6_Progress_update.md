@@ -5,10 +5,11 @@
 
 For exon region, several things are done:
 
-- Change the MixtureFinder cmd to `-m MIX+MFP` and rerun the analysis in 4255 loci
-- After changing the species filter logic, use ModelFinder on 14194 exon loci, and calculate qCF and pp
-- Fixed the species tree in original paper to get the right clade grouping (2 kind of paper tree used), then calculate the qCF and pp result for both ModelFinder and Mixture Finder
-- Calculate the BIC difference (BIC_MIX - BIC_MF) for 4255 exon loci and visulize it
+- Changed the MixtureFinder command to `-m MIX+MFP` and reran the analysis on 4255 loci.
+- After modifying the species filter logic, applied ModelFinder to 14194 exon loci, and calculated qCF and pp values.
+- Fixed the species tree in original paper in ASTRAL to get the correct clade grouping (2 kind of paper tree used), then calculate the qCF and pp result for both ModelFinder and Mixture Finder
+- Calculate the BIC difference (BIC_MIX - BIC_MF) for 4255 exon loci and visulized it
+- Calculated qCF/pp results for the filtered 36794 intergenic region loci using MixtureFinder.
 
 
 
@@ -20,21 +21,22 @@ For exon region, several things are done:
 | Mirandornithes | 0.62      | 0.62     | 
 | Galloanseres | 0.753  | 0.85   | 
 
-In the tree and table above, even using 14194 (in 14972) exon loci, we still get the wrong clade grouping, and the qCF in 2 of 3 recognizable clade does not have increase compared to the 4255 loci result.
+In the tree and table above, even with 14194 (out of 14972) exon loci, the wrong clade grouping persists. Moreover, the qCF in 2 of 3 recognizable clades does not improve compared to the 4255 loci result.
 
-so maybe I would just use the original filter logic (keep the 4255 for exon and 36794 for intergenic) since **there is no strong improvement after taking much more loci**
+
+Therefore, I may continue using the original filter logic (keeping 4255 for exon and 36794 for intergenic) since there is **no great improvement with a larger number of loci.**
 
 ### 1.2 Rerun the Mixture Finder and fixed the paper tree to calculate qCF:
 
 As descripted above, `-m MIX+MFP` were used to rerun the analysis, then, 2 kind of orginal paper species trees:
+
 - The main species tree resulting from 63K intergenic regions analyzed with ASTRAL
 
 - The species tree resulting from 63K intergenic regions analyzed with RAxML-NG **concatenation**
 
-were trimmed to only containing the 24 selected species using `drop.tip` , and fixed to ASTRAL to calculate species tree
+Both trees were trimmed to contain only the 24 selected species using `drop.tip`, and the species tree was fixed to ASTRAL to calculate qCF and pp values.
 
-However, the **main species tree since to be loaded incorrectly in R** (I have tried several methods including `read.tree()`, but the main species tree just could not be correctly loaded, with NaN branch length) 
-
+However, the main species tree appears to be loaded incorrectly in R (I tried several methods, including `read.tree()`, but the main species tree could not be loaded properly, with NaN branch lengths).
 
 ### 1.2.1 Main species tree fixed:
 
@@ -102,7 +104,7 @@ Using the same filter logic of the 24 selected species, **I got 36794 (63430 in 
 Then I run the same process as in exon: ModelFinder vs MixtureFinder
 
 > [!NOTE]
-> Problem1 However, the Modelfinder failed when running in server due to the resource error, I have checked top and the thread and memory didn't run out, and I have also tried to decrease the threads used in command, but the below error still exists
+> Problem1: However, ModelFinder failed to run on the server due to a resource error. I checked top, and both thread and memory resources were sufficient. I also reduced the number of threads used, but the following error still persists:
 
 Error in ModelFinder:
 ```
@@ -129,17 +131,17 @@ I have randomly selected 100 exon loci with full species and run with both Mixtu
 
 In ModelFinder, it takes **1h : 31m to run with 75 thread**.
 
-But in MixtureFinder using **128 threads**, up to now, only 100 loci analysis have taken more than 6 hours and it haven't finish yet, so it is **superslow**... 
+However, in MixtureFinder, using **128 threads**, the analysis of just 100 loci has already taken over 6 hours and still hasn’t finished, **so it is extremely slow...**
 
 
 
 
 ## 4. Several things haven't done:
 
-1: Using `treespace` to visulize the 4255 gene trees around the estimated species tree. 
+1: Using `treespace` to visulize the **4255 gene trees around the estimated species tree.** Since my tree results are unrooted, I used the "RF” method rather than the default
 
 > [!NOTE]
-> Problem2 However, the Modelfinder failed when running in server due to the resource error, I have checked top and the thread and memory didn't run out, and I have also tried to decrease the threads used in command, but the below error still exists
+> Problem2： I tried the following code to visulise, but too many tree points makes the plot noisy, and when I try to edit the plot, R studio always crashed...(Maybe due to too many trees)
 
 ```
 species_tree <- read.tree("astral_4255species_mix_mfp.tree")
@@ -151,4 +153,4 @@ plotGroves(treespace$pco, lab.show=TRUE, lab.cex=1.5)
 
 2: The intergenic analysis using ModelFinder (as stated above)
 
-3: Summarise the Model result of ModelFinder and MixtureFinder, and think out a way to visualize it 
+3: Summarize the results of Model 
