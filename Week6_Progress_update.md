@@ -131,7 +131,7 @@ I have randomly selected 100 exon loci with full species and run with both Mixtu
 
 In ModelFinder, it takes **1h : 31m to run with 75 thread**.
 
-However, in MixtureFinder, using **128 threads**, the analysis of just 100 loci has already taken over 6 hours and still hasn’t finished, **so it is extremely slow...**
+However, in MixtureFinder, using **128 threads**, the analysis of just 100 loci took about **35 hours to finish**, so it is **extremely slow...**
 
 
 
