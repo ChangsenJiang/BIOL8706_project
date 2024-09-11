@@ -116,6 +116,11 @@ libgomp: Thread creation failed: Resource temporarily unavailable
 ![Mix Image](data/tree_visulization_paper/intergenic_mix_main_drawn.jpg)
 
 
+
+### ModelFinder Result of 36794 Intergenic region:
+
+![Mix Image](data/tree_visulization_paper/inter_mf_qcfpp_main.jpg)
+
 | Clade |  Intergenic_qCF_Mix | Intergenic_pp_Mix | Intergenic_qCF_Mf | Intergenic_pp_Mf |
 |-------------|---------|---------|---------|---------|
 | Telluraves | 0.579      | 1.0     | 0.581     | 1.0     | 
