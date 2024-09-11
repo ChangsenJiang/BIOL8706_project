@@ -116,13 +116,13 @@ libgomp: Thread creation failed: Resource temporarily unavailable
 ![Mix Image](data/tree_visulization_paper/intergenic_mix_main_drawn.jpg)
 
 
-| Clade |  Intergenic_qCF_Mix | Intergenic_pp_Mix | 
-|-------------|---------|---------|
-| Telluraves | 0.579      | 1.0     | 
-| Elementaves | 0.334      | 0.087     | 
-| Columbaves | 0.342 | 0.008      | 
-| Mirandornithes | 0.961  | 1.0      | 
-
+| Clade |  Intergenic_qCF_Mix | Intergenic_pp_Mix | Intergenic_qCF_Mf | Intergenic_pp_Mf |
+|-------------|---------|---------|---------|---------|
+| Telluraves | 0.579      | 1.0     | 0.581     | 1.0     | 
+| Elementaves | 0.334      | 0.087     | 0.335     | 0.196     | 
+| Columbaves | 0.342 | 0.008      | 0.343    | 0.017     | 
+| Mirandornithes | 0.961  | 1.0      | 0.96    | 1.0     | 
+| Galloanseres | 1.0  | 1.0   | 1.0            | 1.0        |
 
 
 ## 3. Try full species analysis
