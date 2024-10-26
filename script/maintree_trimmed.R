@@ -2,7 +2,7 @@ library(ape)
 
 
 
-tree <- read.tree("D:/naturebird/data/maintree_concan_abbr.tree") 
+tree <- read.tree("D:/BIOL8706_project/data/paper_tree/exon_tree_abrv.tree") 
 
 str(tree)
 # Define the list of species to exclude
@@ -57,4 +57,4 @@ trimmed_tree <- drop.tip(tree, excluded_species)
 plot(trimmed_tree)
 
 # Save the trimmed tree to a file
-write.tree(trimmed_tree, "D:/naturebird/data/concan_maintree_trimmed.tree")
+write.tree(trimmed_tree, "D:/BIOL8706_project/data/paper_tree/exon_tree_abrv_trimmed.tree")

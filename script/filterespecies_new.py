@@ -45,8 +45,8 @@ def filter_fasta_files(input_dir, output_dir, species_list):
                     print(f"Missing some species in {file_name}, skipping file.")
 
 # Specify the input and output folder paths
-input_dir = 'd:/naturebird/data/14972_exon_alns'
-output_dir = 'd:/BIOL8706_project/data/species_filter/species_filtered'  # A new subdirectory for filtered files
+input_dir = 'd:/naturebird\data/63k_alns'
+output_dir = 'd:\BIOL8706_project\data\species_filter\Intergenic_species_filtered'  # A new subdirectory for filtered files
 
 # Specify the list of species to be filtered
 species_list = ["PROCAF", "CNELOR", "MENNOV", "SERLUN", "ACACHL", "CHUBUR", "UROIND", "CICMAG", 

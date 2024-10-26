@@ -35,28 +35,28 @@ def extract_file_ids(folder_path):
     return file_ids
 
 # Set folder path and specific file path
-folder_path = 'd:/BIOL8706_project/data/4255exon_mix_result_new'
-specific_file_path = 'd:/BIOL8706_project/data/4255exon_modelfinder_result/4255mf_combined.iqtree'
-folder_path_ids = "d:/BIOL8706_project/data/4255exon"
+folder_path = 'd:\BIOL8706_project\data\mass/36794inter_mix_result'
+specific_file_path = 'd:\BIOL8706_project\data\mass/36794inter_mf_result/36794inter_mf_result\mf_combined.iqtree'
+#folder_path_ids = "d:/BIOL8706_project/data/4255exon"
 # Part 1: Extract BIC scores from all .iqtree files in the folder
 bic_scores = extract_bic_scores_from_folder(folder_path)
 
 # Part 2: Extract BIC values from specified lines in a specific file
-bic_values = extract_bic_values_from_specific_file(specific_file_path, 4308, 8562)
+bic_values = extract_bic_values_from_specific_file(specific_file_path, 36847, 73640)
 
 
-file_ids = extract_file_ids(folder_path_ids)
+#file_ids = extract_file_ids(folder_path_ids)
 
 # Output to a CSV file
 import pandas as pd
 
 df = pd.DataFrame({
-    'File IDs': file_ids,
+#    'File IDs': file_ids,
     'BIC Scores from Folder': bic_scores,
     'BIC Values from Specific File': bic_values
 })
 
-output_file_path = 'd:/BIOL8706_project/data/4255exon_modelfinder_result/BIC_ID.csv'
+output_file_path = 'd:/BIOL8706_project/data/BIC_inter.csv'
 
 # Save DataFrame to CSV without row index
 df.to_csv(output_file_path, index=False)

@@ -7,3 +7,14 @@ data/example_intergenic_data
 data/100exon_fullspecies
 data/4255exon_result
 data/4255exon_mix_result_new
+data/100exonfull_mix_result
+data/qcf_retry_100locifullspecies_mf_result
+data/qcf_retry_100lociexonfull_mix_result
+data/species_tree
+data/species_tree_plot
+data/tree_visulization_paper
+bic_new.png
+d:/BIOL8706_project/gene tree length.png
+d:/BIOL8706_project/inter_combined_final_04(1).png
+d:/BIOL8706_project/qcf.png
+d:/BIOL8706_project/small retry.png
