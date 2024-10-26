@@ -10,7 +10,7 @@ Specifically, the BIC value for the best model in each locus from both regions a
 
 
 ### **Density distribution of the difference between BIC for the mixture model and the one-class model in the exon and intergenic regions**
-![BIC Image](data\final_progress_plot\bic_final.png)
+![BIC Image](data/final_progress_plot/bic_final.png)
 
 
 The classes number is the number of classes in the best-fit model for each locus. In a single model from ModelFinder, the model number would always be one, while in a mixture model selected by MixtureFinder, the number might be greater than one. Model numbers are also extracted from the output files generated when estimating gene trees using IQ-TREE (version 2.3.5.1), and the model number for each locus in both regions was extracted.
@@ -19,7 +19,7 @@ We use the number of models in the best-fit model for each locus and the distrib
 
 ### **Relative frequency of the number of models selected by MixtureFinder in (a) Exon and (b) Intergenic region**
 
-![alt text](data/final_progress_plot/bic_final.png)
+![alt text](data/final_progress_plot/bic_new.png)
 
 ## 2. Evaluation of the gene trees
 
