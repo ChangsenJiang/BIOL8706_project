@@ -1,5 +1,4 @@
 # BIOL8706 Project
-
 **The bird-tree project for BIOL8706 course**
 
 **Author: Changsen JIANG u7627399**
@@ -13,11 +12,12 @@
 
 - `script` contains the orginial scrit for the data analysis and generating the plot in research report
   
-- There are four progress files documenting the progress throughout the semester:
+- There are 4 markdown progress files documenting the progress throughout the semester, and also one merged pdf version:
     - 1: `project_outline.md`
     - 2: `Project_progress_update.md`
     - 3: `Third_Progress_update.md`
     - 4: `Final Progress update.md`
+    - 5: `Changsen Jiang u7627399 progress record.pdf`
 
 
 
@@ -35,4 +35,4 @@
   - species tree summarised from 36,794 gene trees built from intergenic loci using ModelFinder
   - species tree summarised from 36,794 gene trees built from intergenic loci using MixtureFinder
 
-
+- `iqtree-2.3.5.2.mixfinder-Linux-intel` contains the software used for phylogenetic analysis in this project: 
