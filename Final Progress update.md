@@ -19,7 +19,7 @@ We use the number of models in the best-fit model for each locus and the distrib
 
 ### **Relative frequency of the number of models selected by MixtureFinder in (a) Exon and (b) Intergenic region**
 
-![model number](data/final_progress_plot/bic_new.png)
+![model number](data/final_progress_plot/model_number.png)
 
 ## 2. Evaluation of the gene trees
 
