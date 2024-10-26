@@ -19,7 +19,7 @@ We use the number of models in the best-fit model for each locus and the distrib
 
 ### **Relative frequency of the number of models selected by MixtureFinder in (a) Exon and (b) Intergenic region**
 
-![alt text](bic_new.png)
+![alt text](data/final_progress_plot/bic_final.png)
 
 ## 2. Evaluation of the gene trees
 
@@ -31,12 +31,12 @@ In general, a high nRF value indicates a significant difference between two tree
 
 
 ### **Distribution of Normalised Robinson-Foulds (nRF) Distance**
-![RF_plot](data\final_progress_plot\rf_1013new.png)
+![RF_plot](data/final_progress_plot/rf_1013new.png)
 
 Tree length is simply defined as the sum of all branch lengths in a tree. The branch lengths for each tree in the four gene tree sets (as defined above) were extracted from the output files of IQ-TREE and summed into tree lengths.
 
 ### **Tree length of Gene trees estimated by different method in exon and intergenic region**
-![alt text](<gene tree length.png>)
+![alt text](d:\BIOL8706_project\data\final_progress_plot\gene tree length.png)
 
 ## Evaluation of the species trees of One-class model and mixture model for both regions
 
@@ -56,23 +56,23 @@ Since the exon species tree is summarized from the geen trees, greater similarit
 ### **Tanglegrams of species trees:**
 
 Exon region:
-![RF_plot](data\final_progress_plot\exon_tanglegram_03(1).png)
+![RF_plot](data/final_progress_plot/exon_tanglegram_03(1).png)
 
 
 
 Intergenic region:
 
-![alt text](inter_combined_final_04(1).png)
+![alt text](data/final_progress_plot/inter_combined_final_04(1).png)
 
 
 
 ### **Species tree with qcf/pp value:**
-![alt text](qcf.png)
+![alt text](data/final_progress_plot/qcf.png)
 
 ## A small retry using full species
 
 We randomly selected 100 exon loci that contained all species as a trial. The results showed that after using MixtureFinder, the qCF values for the exon region slightly increased. In contrast, the qCF distribution for 4255 exon loci containing only 24 species showed almost no change after using MixtureFinder. This supports our hypothesis that the limited species sampling in our methodology may have contributed to the less significant results.
 
-![alt text](<small retry.png>)
+![alt text](data/final_progress_plot/small retry.png)
 
 This plot shows the distribution of qCF values in the tree estimated from 100 exon loci with the full species set (363 species) (two boxes on the right) and the qCF values in the tree estimated from 4255 exon loci with 24 selected species (two boxes on the left). Grey and orange colors represent the results from ModelFinder (One-class model) and MixtureFinder, respectively. From the figure, we can observe that when using 100 loci with the full species set, MixtureFinder increases the overall distribution of qCF values (two boxes on the right). However, when using 4255 loci with 24 species, there is no obvious improvement in qCF (two boxes on the left). qCF values were calculated using ASTRAL-5.7.1.
