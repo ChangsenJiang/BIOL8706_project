@@ -73,6 +73,6 @@ Intergenic region:
 
 We randomly selected 100 exon loci that contained all species as a trial. The results showed that after using MixtureFinder, the qCF values for the exon region slightly increased. In contrast, the qCF distribution for 4255 exon loci containing only 24 species showed almost no change after using MixtureFinder. This supports our hypothesis that the limited species sampling in our methodology may have contributed to the less significant results.
 
-![alt text](data/final_progress_plot/small retry.png)
+![alt text](data/final_progress_plot/small_retry.png)
 
 This plot shows the distribution of qCF values in the tree estimated from 100 exon loci with the full species set (363 species) (two boxes on the right) and the qCF values in the tree estimated from 4255 exon loci with 24 selected species (two boxes on the left). Grey and orange colors represent the results from ModelFinder (One-class model) and MixtureFinder, respectively. From the figure, we can observe that when using 100 loci with the full species set, MixtureFinder increases the overall distribution of qCF values (two boxes on the right). However, when using 4255 loci with 24 species, there is no obvious improvement in qCF (two boxes on the left). qCF values were calculated using ASTRAL-5.7.1.
